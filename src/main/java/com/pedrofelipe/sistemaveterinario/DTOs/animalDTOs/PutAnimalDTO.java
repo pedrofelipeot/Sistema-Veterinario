@@ -4,7 +4,6 @@ import lombok.Data;
 
 @Data
 public class PutAnimalDTO {
-    private long id;
     private String nome;
     private String especie;
     private String raca;

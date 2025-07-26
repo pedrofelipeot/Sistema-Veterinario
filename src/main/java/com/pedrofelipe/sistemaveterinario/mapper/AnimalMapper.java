@@ -5,6 +5,7 @@ import com.pedrofelipe.sistemaveterinario.DTOs.animalDTOs.PostAnimalDTO;
 import com.pedrofelipe.sistemaveterinario.DTOs.animalDTOs.PutAnimalDTO;
 import com.pedrofelipe.sistemaveterinario.entidades.Animal;
 import org.mapstruct.Mapper;
+import org.mapstruct.MappingTarget;
 
 import java.util.List;
 
@@ -14,6 +15,6 @@ public abstract class AnimalMapper {
     public abstract List<GetAnimalDTO> getAnimal(List<Animal> animal);
     public abstract GetAnimalDTO getAnimalId(Animal animal);
     public abstract Animal postAnimal(PostAnimalDTO postAnimalDTO);
-    public abstract Animal putAnimal(PutAnimalDTO putAnimalDTO);
+    public abstract void putAnimal(PutAnimalDTO putAnimalDTO, @MappingTarget Animal animal);
 
 }
