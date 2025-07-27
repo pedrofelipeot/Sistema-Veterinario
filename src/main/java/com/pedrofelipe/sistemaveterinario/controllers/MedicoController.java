@@ -1,0 +1,38 @@
+package com.pedrofelipe.sistemaveterinario.controllers;
+
+import com.pedrofelipe.sistemaveterinario.DTOs.animalDTOs.GetAnimalDTO;
+import com.pedrofelipe.sistemaveterinario.DTOs.medicoDTOs.GetMedicoDTO;
+import com.pedrofelipe.sistemaveterinario.services.MedicoService;
+import lombok.RequiredArgsConstructor;
+import org.apache.coyote.Response;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+
+@RequiredArgsConstructor
+@RestController
+@RequestMapping("medicos")
+public class MedicoController {
+    private final MedicoService medicoService;
+
+    @GetMapping
+    public ResponseEntity<List<GetMedicoDTO>> listarMedicos(){
+        List<GetMedicoDTO> medico = medicoService.listarMedico();
+        return ResponseEntity.status(HttpStatus.OK).body(medico);
+    }
+
+    @GetMapping(path = "/{id}")
+    public ResponseEntity<GetMedicoDTO> listarPorId(@PathVariable long id){
+        GetMedicoDTO medico = medicoService.listarPorId(id);
+        return ResponseEntity.status(HttpStatus.OK).body(medico);
+    }
+
+    @GetMapping(path = "/find")
+    public ResponseEntity<List<GetMedicoDTO>> listarPorNome(@RequestParam String nome){
+        List<GetMedicoDTO> medico = medicoService.listarPorNome(nome);
+        return ResponseEntity.status(HttpStatus.OK).body(medico);
+    }
+
+}
