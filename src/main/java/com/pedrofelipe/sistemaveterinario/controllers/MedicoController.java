@@ -2,6 +2,8 @@ package com.pedrofelipe.sistemaveterinario.controllers;
 
 import com.pedrofelipe.sistemaveterinario.DTOs.animalDTOs.GetAnimalDTO;
 import com.pedrofelipe.sistemaveterinario.DTOs.medicoDTOs.GetMedicoDTO;
+import com.pedrofelipe.sistemaveterinario.DTOs.medicoDTOs.PostMedicoDTO;
+import com.pedrofelipe.sistemaveterinario.DTOs.medicoDTOs.PutMedicoDTO;
 import com.pedrofelipe.sistemaveterinario.services.MedicoService;
 import lombok.RequiredArgsConstructor;
 import org.apache.coyote.Response;
@@ -34,5 +36,26 @@ public class MedicoController {
         List<GetMedicoDTO> medico = medicoService.listarPorNome(nome);
         return ResponseEntity.status(HttpStatus.OK).body(medico);
     }
+
+    @PostMapping
+    public ResponseEntity<GetMedicoDTO> criarMedico(@RequestBody PostMedicoDTO postMedicoDTO){
+        GetMedicoDTO medicoDTO = medicoService.criarMedico(postMedicoDTO);
+        return ResponseEntity.status(HttpStatus.CREATED).body(medicoDTO);
+    }
+
+    @PutMapping(path = "/{id}")
+    public ResponseEntity<String> atualizarMedico(@PathVariable long id, @RequestBody PutMedicoDTO putMedicoDTO){
+        medicoService.atualizarMedico(id,putMedicoDTO);
+        return ResponseEntity.status(HttpStatus.OK).body("Atualizado com sucesso");
+    }
+
+    @DeleteMapping(path = "/{id}")
+    public ResponseEntity<String> deletarMedico(@PathVariable long id){
+        medicoService.deletarMedico(id);
+        return ResponseEntity.status(HttpStatus.OK).body("Deletado com sucesso");
+    }
+
+
+
 
 }

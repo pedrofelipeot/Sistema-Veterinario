@@ -1,6 +1,8 @@
 package com.pedrofelipe.sistemaveterinario.services;
 
 import com.pedrofelipe.sistemaveterinario.DTOs.medicoDTOs.GetMedicoDTO;
+import com.pedrofelipe.sistemaveterinario.DTOs.medicoDTOs.PostMedicoDTO;
+import com.pedrofelipe.sistemaveterinario.DTOs.medicoDTOs.PutMedicoDTO;
 import com.pedrofelipe.sistemaveterinario.entidades.Medico;
 import com.pedrofelipe.sistemaveterinario.mapper.MedicoMapper;
 import com.pedrofelipe.sistemaveterinario.repository.MedicoRepository;
@@ -29,5 +31,24 @@ public class MedicoService {
     public List<GetMedicoDTO> listarPorNome(String nome){
         List<Medico> medico = medicoRepository.findByNome(nome);
         return medicoMapper.getMedico(medico);
+    }
+
+    public GetMedicoDTO criarMedico(PostMedicoDTO postMedicoDTO){
+        Medico medico = medicoMapper.postMedico(postMedicoDTO);
+        medico = medicoRepository.save(medico);
+        return medicoMapper.getMedicoId(medico);
+    }
+
+    public void atualizarMedico(long id, PutMedicoDTO putMedicoDTO){
+       Medico medicoExistente = medicoRepository.findById(id).
+               orElseThrow(() -> new RuntimeException("Medico não encontrado"));
+       medicoMapper.putMedico(putMedicoDTO,medicoExistente);
+       medicoRepository.save(medicoExistente);
+    }
+
+    public void deletarMedico(long id){
+        Medico medicoExistente = medicoRepository.findById(id).
+                orElseThrow(() -> new RuntimeException("Medico não encontrado"));
+        medicoRepository.delete(medicoExistente);
     }
 }
