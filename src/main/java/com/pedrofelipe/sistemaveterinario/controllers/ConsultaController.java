@@ -1,6 +1,8 @@
 package com.pedrofelipe.sistemaveterinario.controllers;
 
 import com.pedrofelipe.sistemaveterinario.DTOs.consultaDTOs.GetConsultaDTO;
+import com.pedrofelipe.sistemaveterinario.DTOs.consultaDTOs.PostConsultaDTO;
+import com.pedrofelipe.sistemaveterinario.DTOs.consultaDTOs.PutConsultaDTO;
 import com.pedrofelipe.sistemaveterinario.services.ConsultaService;
 import lombok.RequiredArgsConstructor;
 import org.apache.coyote.Response;
@@ -39,5 +41,25 @@ public class ConsultaController {
         List<GetConsultaDTO> consulta = consultaService.listarConsultasAnimal(nome);
         return ResponseEntity.status(HttpStatus.OK).body(consulta);
     }
+
+    @PostMapping
+    public ResponseEntity<GetConsultaDTO> criarConsulta(@RequestBody PostConsultaDTO postConsultaDTO){
+        GetConsultaDTO consultaDTO = consultaService.criarConsulta(postConsultaDTO);
+        return ResponseEntity.status(HttpStatus.CREATED).body(consultaDTO);
+    }
+
+    @PutMapping("/{id}")
+    public ResponseEntity<String> atualizarConsulta(@PathVariable long id, @RequestBody PutConsultaDTO putConsultaDTO){
+        consultaService.atualizarConsulta(id,putConsultaDTO);
+        return ResponseEntity.status(HttpStatus.OK).body("Atualizado com sucesso!");
+    }
+
+    @DeleteMapping(path = "/{id}")
+    public ResponseEntity<String> deletarConta(@PathVariable long id){
+        consultaService.deletarConta(id);
+        return ResponseEntity.status(HttpStatus.OK).body("Deletado com sucesso");
+    }
+
+
 
 }
