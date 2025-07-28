@@ -1,0 +1,516 @@
+type: collection.insomnia.rest/5.0
+name: My Collection
+meta:
+  id: wrk_d1adc73c5ad247958a3fb33755abf85c
+  created: 1751205639385
+  modified: 1751205639385
+  description: ""
+collection:
+  - name: Animais
+    meta:
+      id: fld_47db72e87f8e47e7a9c8789ec7953872
+      created: 1753545867140
+      modified: 1753649147207
+      sortKey: -1753545867140
+      description: ""
+    children:
+      - url: http://localhost:8080/animais/find?nome=rex
+        name: Buscar por nome
+        meta:
+          id: req_6be6215153be42f7ba96f9fe537682e6
+          created: 1753545893324
+          modified: 1753546053427
+          isPrivate: false
+          description: ""
+          sortKey: -1753545893324
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.3.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/animais/1
+        name: Buscar por id
+        meta:
+          id: req_39b5d7a2c6a245ab8e1884c3f8b68674
+          created: 1753546090017
+          modified: 1753546138384
+          isPrivate: false
+          description: ""
+          sortKey: -1753546090017
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.3.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/animais
+        name: Listar Todos
+        meta:
+          id: req_7c87e4b052ea424f83157077e04f9311
+          created: 1753546159246
+          modified: 1753546308166
+          isPrivate: false
+          description: ""
+          sortKey: -1753546159246
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.3.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/animais
+        name: Criar animal
+        meta:
+          id: req_359dcfa72de34343851edd4819cdf658
+          created: 1753546213161
+          modified: 1753546366372
+          isPrivate: false
+          description: ""
+          sortKey: -1753546213161
+        method: POST
+        body:
+          mimeType: application/json
+          text: |
+            {
+              "nome": "Rex",
+              "especie": "Cachorro",
+              "raca": "Labrador",
+              "idade": 5,
+              "sexo": "M"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.3.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/animais/1
+        name: Atualizar animal
+        meta:
+          id: req_e6886fde90f042589d775b5ceaf053c4
+          created: 1753547635955
+          modified: 1753550232346
+          isPrivate: false
+          description: ""
+          sortKey: -1753546213261
+        method: PUT
+        body:
+          mimeType: application/json
+          text: |
+            {
+              "nome": "sssss",
+              "especie": "sss",
+              "raca": "Labrccccador",
+              "idade": 5,
+              "sexo": "M"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.3.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/animais/4
+        name: Deletar Animal
+        meta:
+          id: req_a49c02a986a64663ac31be2c825a5160
+          created: 1753553445273
+          modified: 1753553472305
+          isPrivate: false
+          description: ""
+          sortKey: -1753553445273
+        method: DELETE
+        headers:
+          - name: User-Agent
+            value: insomnia/11.3.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+    environment:
+      "": ""
+  - name: Médicos
+    meta:
+      id: fld_de65e3cbf56b4667b73cd711d00ef759
+      created: 1753623774979
+      modified: 1753726758669
+      sortKey: -1753623774979
+      description: ""
+    children:
+      - url: http://localhost:8080/medicos
+        name: Listar Médicos
+        meta:
+          id: req_0a70cd4c100e4af3a7f11a2d21150651
+          created: 1753623779337
+          modified: 1753623828945
+          isPrivate: false
+          description: ""
+          sortKey: -1753623779337
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.3.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/medicos/find?nome=souza
+        name: Listar por nome
+        meta:
+          id: req_df99f42a30b447a4a20693416c00a5eb
+          created: 1753624007937
+          modified: 1753625751825
+          isPrivate: false
+          description: ""
+          sortKey: -1753624007937
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.3.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/medicos/1
+        name: Listar Por id
+        meta:
+          id: req_cd72b195cf6e41d786c5c159f5f335e1
+          created: 1753624025532
+          modified: 1753624116265
+          isPrivate: false
+          description: ""
+          sortKey: -1753624025532
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.3.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/medicos
+        name: Criar medico
+        meta:
+          id: req_4b21bbf7f10b4f25ae02c32b2fcbb034
+          created: 1753627207029
+          modified: 1753627240589
+          isPrivate: false
+          description: ""
+          sortKey: -1753627207029
+        method: POST
+        body:
+          mimeType: application/json
+          text: |
+            {
+              "nome": "Dra. seu zé Oliveira",
+              "idade": 32,
+              "crmv": "CRMV-PE54321"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.3.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/medicos/5
+        name: Deletar Medico
+        meta:
+          id: req_15982e0045014885a22f139868153ead
+          created: 1753630465534
+          modified: 1753630877800
+          isPrivate: false
+          description: ""
+          sortKey: -1753630465534
+        method: DELETE
+        headers:
+          - name: User-Agent
+            value: insomnia/11.3.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/medicos/5
+        name: Atualizar medico
+        meta:
+          id: req_484d96380f3f4767b42900e97acd9bf7
+          created: 1753630499090
+          modified: 1753630579035
+          isPrivate: false
+          description: ""
+          sortKey: -1753630499090
+        method: PUT
+        body:
+          mimeType: application/json
+          text: |
+            {
+              "nome": "Dra. joazezinho Oliveira",
+              "idade": 32,
+              "crmv": "CRMV-seinaolukinha"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.3.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: Consultas
+    meta:
+      id: fld_1d2ebcc311db4e9e9c3e0e1b0f4aa5cd
+      created: 1753649171062
+      modified: 1753726740476
+      sortKey: -1753649171062
+      description: ""
+    children:
+      - url: http://localhost:8080/consultas
+        name: Listar Consultas
+        meta:
+          id: req_d8961d7c79d04ccfbc526f5c1633e62a
+          created: 1753649173996
+          modified: 1753657114670
+          isPrivate: false
+          description: ""
+          sortKey: -1753649173996
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.3.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/consultas/1
+        name: Listar Por id
+        meta:
+          id: req_bc03c8528e2e49fd937647e8176e4715
+          created: 1753652382793
+          modified: 1753652632238
+          isPrivate: false
+          description: ""
+          sortKey: -1753652382793
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.3.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/consultas/find/medico?nome=ana
+        name: Listar consultas medico
+        meta:
+          id: req_ec0c755d76364e59979d1d4a3cc8e0ec
+          created: 1753654768967
+          modified: 1753657131310
+          isPrivate: false
+          description: ""
+          sortKey: -1753654768967
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.3.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/consultas/find/animal?nome=mimi
+        name: Listar Consultas animal
+        meta:
+          id: req_f7bb479649f043c483ffbe5c6a41d835
+          created: 1753654795986
+          modified: 1753657236275
+          isPrivate: false
+          description: ""
+          sortKey: -1753653575880
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.3.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/consultas
+        name: Criar consulta
+        meta:
+          id: req_b24bd91fa9b84a5cbb59cfefe69b05a4
+          created: 1753711809714
+          modified: 1753714603309
+          isPrivate: false
+          description: ""
+          sortKey: -1753711809714
+        method: POST
+        body:
+          mimeType: application/json
+          text: |
+            {
+              "doenca": "Infecção de pele",
+              "data": "28/07/2025 10:30",
+              "medicoDTO": {
+                "id": 1
+              },
+              "animalDTO": {
+                "id": 3
+              }
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.3.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/consultas/4
+        name: Atualizar consulta
+        meta:
+          id: req_8f7f5ea8646449edb53e000312fd8c95
+          created: 1753715841382
+          modified: 1753718006599
+          isPrivate: false
+          description: ""
+          sortKey: -1753715841382
+        method: PUT
+        body:
+          mimeType: application/json
+          text: |
+            {
+              "doenca": "Cinomose",
+              "data": "28/07/2025 14:30",
+              "medicoId": 1,
+              "animalId": 2
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.3.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/consultas/6
+        name: Deletar Conta
+        meta:
+          id: req_d7c7b45b21354920bcb7390081bfc88e
+          created: 1753718503204
+          modified: 1753718551573
+          isPrivate: false
+          description: ""
+          sortKey: -1753718503204
+        method: DELETE
+        headers:
+          - name: User-Agent
+            value: insomnia/11.3.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_05a39fa6b8723940383ac3b32309ddcf65c30da3
+    created: 1751205639418
+    modified: 1751205639418
+environments:
+  name: Base Environment
+  meta:
+    id: env_05a39fa6b8723940383ac3b32309ddcf65c30da3
+    created: 1751205639405
+    modified: 1751205639405
+    isPrivate: false
